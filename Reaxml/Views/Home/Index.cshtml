@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="page-header">
+    <h1>&lt;REAXML /&gt;</h1>
+    A site covering all things real-estate feeds related in Australia.
+</div>
+
+<div >
+   
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Validator</h2>
+        <p>
+            Is your REAXML valid? This online tool allows you to check against the REAXML standard.
+        </p>
+        <p><a class="btn btn-success" href="@Url.Action("Index", "Validator")">Validator &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Source</h2>
+        <p>Wanting to consume REAXML? Feel free to use this open-source library</p>
+        <p><a class="btn btn-success" href="@Url.Action("Home", "Source")">Source Code &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Alternative</h2>
+        <p>REAXML has been around for a long time. It's time for an alternative. Please join the discussion in helping us create the definitive standard for real-estate information in Australia</p>
+        <p><a title="Coming soon" class="btn disabled btn-success" href="#">Learn more &raquo;</a></p>
+    </div>
+</div>

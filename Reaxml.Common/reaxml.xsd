@@ -1,0 +1,1463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="" elementFormDefault="qualified"  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="propertyList">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="commercial" />
+        <xs:element ref="land" />
+        <xs:element ref="rental" />
+        <xs:element ref="holidayRental" />
+        <xs:element ref="residential" />
+        <xs:element ref="rural" />
+      </xs:choice>
+      <xs:attribute name="date" type="xs:string" use="required" />
+      <xs:attribute name="companyName" type="xs:string" />
+      <xs:attribute name="techContactName" type="xs:string" />
+      <xs:attribute name="techContactPhone" type="xs:string" />
+      <xs:attribute name="techContactEmail" type="xs:string" />
+      <xs:attribute name="username" type="xs:string" use="required" />
+      <xs:attribute name="password" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="residential">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="1" ref="agentID" />
+        <xs:element minOccurs="1" maxOccurs="1" ref="uniqueID" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="authority" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="underOffer" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="isHomeLandPackage" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="listingAgent" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="price" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="priceView" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="address" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="municipality" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="streetDirectory" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="category" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="headline" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="description" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="features" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="soldDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="landDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="buildingDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="inspectionTimes" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="auction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="vendorDetails" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="externalLink" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="videoLink" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="extraFields" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="images" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="newConstruction" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="ecoFriendly" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="idealFor" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="views" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="objects" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="project" />
+      </xs:choice>
+      <xs:attribute name="modTime" type="xs:string" use="required" />
+      <xs:attribute name="status" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="current" />
+            <xs:enumeration value="withdrawn" />
+            <xs:enumeration value="offmarket" />
+            <xs:enumeration value="sold" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rental">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="agentID" />
+        <xs:element ref="uniqueID" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="listingAgent" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="dateAvailable" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="rent" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="priceView" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="bond" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="address" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="municipality" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="streetDirectory" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="category" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="headline" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="description" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="features" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="holiday" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="landDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="newConstruction" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="buildingDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="inspectionTimes" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="externalLink" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="videoLink" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="extraFields" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="images" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="objects" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="ecoFriendly" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="views" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="allowances" />
+      </xs:choice>
+      <xs:attribute name="modTime" type="xs:string" use="required" />
+      <xs:attribute name="status" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="current" />
+            <xs:enumeration value="withdrawn" />
+            <xs:enumeration value="offmarket" />
+            <xs:enumeration value="leased" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="holidayRental">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="agentID" />
+        <xs:element ref="uniqueID" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="listingAgent" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="dateAvailable" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="rent" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="priceView" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="bond" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="address" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="municipality" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="streetDirectory" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="holidayCategory" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="headline" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="description" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="features" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="landDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="buildingDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="inspectionTimes" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="externalLink" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="availabilityLink" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="extraFields" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="images" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="objects" />
+      </xs:sequence>
+      <xs:attribute name="modTime" type="xs:string" use="required" />
+      <xs:attribute name="status" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="current" />
+            <xs:enumeration value="withdrawn" />
+            <xs:enumeration value="offmarket" />
+            <xs:enumeration value="leased" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rural">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="agentID" />
+        <xs:element ref="uniqueID" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="authority" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="underOffer" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="listingAgent" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="price" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="priceView" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="address" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="municipality" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="streetDirectory" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="ruralCategory" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="headline" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="description" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="features" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="ruralFeatures" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="soldDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="landDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="buildingDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="inspectionTimes" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="auction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="vendorDetails" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="externalLink" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="videoLink" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="extraFields" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="images" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="ecoFriendly" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="idealFor" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="views" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="objects" />
+      </xs:sequence>
+      <xs:attribute name="modTime" type="xs:string" use="required" />
+      <xs:attribute name="status" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="current" />
+            <xs:enumeration value="withdrawn" />
+            <xs:enumeration value="offmarket" />
+            <xs:enumeration value="sold" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="land">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="agentID" />
+        <xs:element ref="uniqueID" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="authority" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="underOffer" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="listingAgent" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="price" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="priceView" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="address" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="municipality" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="estate" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="streetDirectory" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="landCategory" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="headline" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="description" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="features" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="soldDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="landDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="auction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="vendorDetails" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="externalLink" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="videoLink" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="extraFields" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="images" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="views" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="objects" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="project" />
+      </xs:sequence>
+      <xs:attribute name="modTime" type="xs:string" use="required" />
+      <xs:attribute name="status" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="current" />
+            <xs:enumeration value="withdrawn" />
+            <xs:enumeration value="offmarket" />
+            <xs:enumeration value="sold" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="commercial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="agentID" />
+        <xs:element ref="uniqueID" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="marketing" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="commercialAuthority" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="exclusivity" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="commercialListingType" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="underOffer" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="listingAgent" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="price" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="priceView" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="commercialRent" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="outgoings" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="return" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="currentLeaseEndDate" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="tenancy" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="furtherOptions" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="isMultiple" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="address" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="municipality" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="streetDirectory" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="commercialCategory" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="headline" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="description" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="highlight" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="soldDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="landDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="buildingDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="propertyExtent" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="carSpaces" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="parkingComments" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="auction" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="vendorDetails" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="zone" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="externalLink" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="videoLink" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="extraFields" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="images" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="objects" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="miniweb" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="purchaseOrder" />
+      </xs:sequence>
+      <xs:attribute name="modTime" type="xs:string" use="required" />
+      <xs:attribute name="status" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="current" />
+            <xs:enumeration value="withdrawn" />
+            <xs:enumeration value="sold" />
+            <xs:enumeration value="offmarket" />
+            <xs:enumeration value="leased" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="terms" type="xs:string" />
+  <xs:element name="miniweb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="uri" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uri">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="id" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="1" />
+                <xs:enumeration value="2" />
+                <xs:enumeration value="3" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="franchise">
+    <xs:complexType>
+      <xs:attribute default="no" name="value">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="yes" />
+            <xs:enumeration value="no" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="agentID" type="xs:string" />
+  <xs:element name="uniqueID" type="xs:string" />
+  <xs:element name="authority">
+    <xs:complexType>
+      <xs:attribute name="value" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="auction" />
+            <xs:enumeration value="exclusive" />
+            <xs:enumeration value="multilist" />
+            <xs:enumeration value="conjunctional" />
+            <xs:enumeration value="open" />
+            <xs:enumeration value="sale" />
+            <xs:enumeration value="setsale" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="extraFields">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="eField" />
+      </xs:sequence>
+      <xs:attribute name="table" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eField">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="name" type="xs:string" use="required" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="underOffer">
+    <xs:complexType>
+      <xs:attribute default="no" name="value">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="yes" />
+            <xs:enumeration value="no" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="isHomeLandPackage">
+    <xs:complexType>
+      <xs:attribute default="no" name="value">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="yes" />
+            <xs:enumeration value="no" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dateAvailable" type="xs:string" />
+  <xs:element name="commercialListingType">
+    <xs:complexType>
+      <xs:attribute name="value" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="sale" />
+            <xs:enumeration value="lease" />
+            <xs:enumeration value="both" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listingAgent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="agentID" />
+        <xs:element ref="name" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="telephone" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="email" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="twitterURL" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="facebookURL" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="linkedInURL" />
+      </xs:sequence>
+      <xs:attribute default="1" name="id">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="3" />
+            <xs:enumeration value="4" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name" type="xs:string" />
+  <xs:element name="telephone">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute default="BH" name="type">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="BH" />
+                <xs:enumeration value="AH" />
+                <xs:enumeration value="mobile" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="email" type="xs:string" />
+  <xs:element name="twitterURL" type="xs:string" />
+  <xs:element name="facebookURL" type="xs:string" />
+  <xs:element name="linkedInURL" type="xs:string" />
+  <xs:element name="parkingComments" type="xs:string" />
+  <xs:element name="tenancy" type="xs:string" />
+  <xs:element name="propertyExtent" type="xs:string" />
+  <xs:element name="range">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="min" />
+        <xs:element ref="max" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="min" type="xs:string" />
+  <xs:element name="max" type="xs:string" />
+  <xs:element name="price">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="range" />
+      </xs:choice>
+      <xs:attribute default="yes" name="display">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="yes" />
+            <xs:enumeration value="no" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute default="unknown" name="tax">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="unknown" />
+            <xs:enumeration value="exempt" />
+            <xs:enumeration value="inclusive" />
+            <xs:enumeration value="exclusive" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="plusSAV">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="yes" />
+            <xs:enumeration value="no" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="soldPrice">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute default="yes" name="display">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="yes" />
+                <xs:enumeration value="no" />
+                <xs:enumeration value="range" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="priceView" type="xs:string" />
+  <xs:element name="newConstruction" type="xs:string" />
+  <xs:element name="rent">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="period" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="week" />
+                <xs:enumeration value="month" />
+                <xs:enumeration value="weekly" />
+                <xs:enumeration value="monthly" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute default="yes" name="display">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="yes" />
+                <xs:enumeration value="no" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bond" type="xs:string" />
+  <xs:element name="commercialRent">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="rentPerSquareMetre" />
+      </xs:choice>
+      <xs:attribute fixed="annual" name="period">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="annual" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute default="no" name="plusOutgoings">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="yes" />
+            <xs:enumeration value="no" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute default="unknown" name="tax">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="unknown" />
+            <xs:enumeration value="exempt" />
+            <xs:enumeration value="inclusive" />
+            <xs:enumeration value="exclusive" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rentPerSquareMetre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="range" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="carSpaces" type="xs:string" />
+  <xs:element name="zone" type="xs:string" />
+  <xs:element name="outgoings">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute fixed="annual" name="period">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="annual" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="takings" type="xs:string" />
+  <xs:element name="return">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute fixed="annual" name="period">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="annual" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute fixed="percent" name="unit">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="percent" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="currentLeaseEndDate" type="xs:string" />
+  <xs:element name="furtherOptions" type="xs:string" />
+  <xs:element name="purchaseOrder" type="xs:string" />
+  <xs:element name="address">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="site" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="subNumber" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="lotNumber" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="streetNumber" />
+        <xs:element ref="street" />
+        <xs:element ref="suburb" />
+        <xs:choice>
+          <xs:sequence>
+            <xs:element ref="state" />
+            <xs:element ref="postcode" />
+          </xs:sequence>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" ref="region" />
+            <xs:element minOccurs="0" maxOccurs="1" ref="postcode" />
+          </xs:sequence>
+        </xs:choice>
+        <xs:element minOccurs="0" maxOccurs="1" ref="country" />
+      </xs:sequence>
+      <xs:attribute default="yes" name="display">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="yes" />
+            <xs:enumeration value="no" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute default="yes" name="streetview">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="yes" />
+            <xs:enumeration value="no" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="site" type="xs:string" />
+  <xs:element name="subNumber" type="xs:string" />
+  <xs:element name="lotNumber" type="xs:string" />
+  <xs:element name="streetNumber" type="xs:string" />
+  <xs:element name="street" type="xs:string" />
+  <xs:element name="suburb">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute default="yes" name="display">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="yes" />
+                <xs:enumeration value="no" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="state" type="xs:string" />
+  <xs:element name="region" type="xs:string" />
+  <xs:element name="postcode" type="xs:string" />
+  <xs:element name="country" type="xs:string" />
+  <xs:element name="municipality" type="xs:string" />
+  <xs:element name="estate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="stage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stage" type="xs:string" />
+  <xs:element name="streetDirectory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="page" />
+        <xs:element ref="reference" />
+      </xs:sequence>
+      <xs:attribute name="type" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="melways" />
+            <xs:enumeration value="UBD" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="page" type="xs:string" />
+  <xs:element name="reference" type="xs:string" />
+  <xs:element name="category">
+    <xs:complexType>
+      <xs:attribute name="name" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="House" />
+            <xs:enumeration value="Unit" />
+            <xs:enumeration value="Townhouse" />
+            <xs:enumeration value="Villa" />
+            <xs:enumeration value="Apartment" />
+            <xs:enumeration value="Flat" />
+            <xs:enumeration value="Studio" />
+            <xs:enumeration value="Warehouse" />
+            <xs:enumeration value="DuplexSemi-detached" />
+            <xs:enumeration value="Alpine" />
+            <xs:enumeration value="AcreageSemi-rural" />
+            <xs:enumeration value="Retirement" />
+            <xs:enumeration value="BlockOfUnits" />
+            <xs:enumeration value="Terrace" />
+            <xs:enumeration value="ServicedApartment" />
+            <xs:enumeration value="Other" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="holidayCategory">
+    <xs:complexType>
+      <xs:attribute name="name" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="Alpine" />
+            <xs:enumeration value="Unit" />
+            <xs:enumeration value="ServicedApartment" />
+            <xs:enumeration value="House" />
+            <xs:enumeration value="Terrace" />
+            <xs:enumeration value="Flat" />
+            <xs:enumeration value="Studio" />
+            <xs:enumeration value="Villa" />
+            <xs:enumeration value="Townhouse" />
+            <xs:enumeration value="Apartment" />
+            <xs:enumeration value="DuplexSemi-detached" />
+            <xs:enumeration value="Retreat" />
+            <xs:enumeration value="BackpackerHostel" />
+            <xs:enumeration value="Campground" />
+            <xs:enumeration value="CaravanHolidayPark" />
+            <xs:enumeration value="FarmStay" />
+            <xs:enumeration value="HouseBoat" />
+            <xs:enumeration value="Hotel" />
+            <xs:enumeration value="Motel" />
+            <xs:enumeration value="Lodge" />
+            <xs:enumeration value="ExecutiveRental" />
+            <xs:enumeration value="BedAndBreakfast" />
+            <xs:enumeration value="Resort" />
+            <xs:enumeration value="SelfContainedCottage" />
+            <xs:enumeration value="Other" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ruralCategory">
+    <xs:complexType>
+      <xs:attribute name="name" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="Cropping" />
+            <xs:enumeration value="Dairy" />
+            <xs:enumeration value="Farmlet" />
+            <xs:enumeration value="Horticulture" />
+            <xs:enumeration value="Livestock" />
+            <xs:enumeration value="Viticulture" />
+            <xs:enumeration value="MixedFarming" />
+            <xs:enumeration value="Lifestyle" />
+            <xs:enumeration value="Other" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="landCategory">
+    <xs:complexType>
+      <xs:attribute default="Residential" name="name">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="Residential" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="commercialAuthority">
+    <xs:complexType>
+      <xs:attribute name="value" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="auction" />
+            <xs:enumeration value="tender" />
+            <xs:enumeration value="eoi" />
+            <xs:enumeration value="sale" />
+            <xs:enumeration value="forsale" />
+            <xs:enumeration value="offers" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="exclusivity">
+    <xs:complexType>
+      <xs:attribute name="value" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="exclusive" />
+            <xs:enumeration value="open" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="commercialCategory">
+    <xs:complexType>
+      <xs:attribute default="Retail" name="name" type="xs:string" />
+      <xs:attribute default="1" name="id">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="headline" type="xs:string" />
+  <xs:element name="description" type="xs:string" />
+  <xs:element name="highlight">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute default="1" name="id">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="1" />
+                <xs:enumeration value="2" />
+                <xs:enumeration value="3" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="holiday">
+    <xs:complexType>
+      <xs:attribute default="no" name="value">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="yes" />
+            <xs:enumeration value="no" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="features">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="bedrooms" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="bathrooms" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="ensuite" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="garages" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="carports" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="remoteGarage" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="secureParking" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="airConditioning" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="alarmSystem" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="vacuumSystem" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="intercom" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="pool" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="poolInGround" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="poolAboveGround" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="spa" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="tennisCourt" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="balcony" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="deck" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="courtyard" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="outdoorEnt" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="shed" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="fullyFenced" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="openFirePlace" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="openSpaces" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="toilets" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="livingAreas" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="heating" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="hotWaterService" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="insideSpa" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="outsideSpa" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="broadband" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="builtInRobes" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="dishwasher" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="ductedCooling" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="ductedHeating" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="evaporativeCooling" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="floorboards" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="gasHeating" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="gym" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="hydronicHeating" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="payTV" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="reverseCycleAirCon" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="rumpusRoom" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="splitSystemAirCon" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="splitSystemHeating" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="study" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="workshop" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="otherFeatures" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bedrooms" type="xs:string" />
+  <xs:element name="bathrooms" type="xs:string" />
+  <xs:element name="ensuite" type="xs:string" />
+  <xs:element name="garages" type="xs:string" />
+  <xs:element name="carports" type="xs:string" />
+  <xs:element name="remoteGarage" type="xs:string" />
+  <xs:element name="secureParking" type="xs:string" />
+  <xs:element name="airConditioning" type="xs:string" />
+  <xs:element name="alarmSystem" type="xs:string" />
+  <xs:element name="vacuumSystem" type="xs:string" />
+  <xs:element name="intercom" type="xs:string" />
+  <xs:element name="pool">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute default="inground" name="type">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="inground" />
+                <xs:enumeration value="aboveground" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="poolInGround" type="xs:string" />
+  <xs:element name="poolAboveGround" type="xs:string" />
+  <xs:element name="spa">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute default="inground" name="type">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="inground" />
+                <xs:enumeration value="aboveground" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tennisCourt" type="xs:string" />
+  <xs:element name="balcony" type="xs:string" />
+  <xs:element name="deck" type="xs:string" />
+  <xs:element name="courtyard" type="xs:string" />
+  <xs:element name="outdoorEnt" type="xs:string" />
+  <xs:element name="shed" type="xs:string" />
+  <xs:element name="fullyFenced" type="xs:string" />
+  <xs:element name="openFirePlace" type="xs:string" />
+  <xs:element name="openSpaces" type="xs:string" />
+  <xs:element name="toilets" type="xs:string" />
+  <xs:element name="livingAreas" type="xs:string" />
+  <xs:element name="heating">
+    <xs:complexType>
+      <xs:attribute default="other" name="type">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="gas" />
+            <xs:enumeration value="electric" />
+            <xs:enumeration value="GDH" />
+            <xs:enumeration value="solid" />
+            <xs:enumeration value="other" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hotWaterService">
+    <xs:complexType>
+      <xs:attribute name="type" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="gas" />
+            <xs:enumeration value="electric" />
+            <xs:enumeration value="solar" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insideSpa" type="xs:string" />
+  <xs:element name="outsideSpa" type="xs:string" />
+  <xs:element name="broadband" type="xs:string" />
+  <xs:element name="builtInRobes" type="xs:string" />
+  <xs:element name="dishwasher" type="xs:string" />
+  <xs:element name="ductedCooling" type="xs:string" />
+  <xs:element name="ductedHeating" type="xs:string" />
+  <xs:element name="evaporativeCooling" type="xs:string" />
+  <xs:element name="floorboards" type="xs:string" />
+  <xs:element name="gasHeating" type="xs:string" />
+  <xs:element name="gym" type="xs:string" />
+  <xs:element name="hydronicHeating" type="xs:string" />
+  <xs:element name="payTV" type="xs:string" />
+  <xs:element name="reverseCycleAirCon" type="xs:string" />
+  <xs:element name="rumpusRoom" type="xs:string" />
+  <xs:element name="splitSystemAirCon" type="xs:string" />
+  <xs:element name="splitSystemHeating" type="xs:string" />
+  <xs:element name="study" type="xs:string" />
+  <xs:element name="workshop" type="xs:string" />
+  <xs:element name="otherFeatures" type="xs:string" />
+  <xs:element name="allowances">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="1" ref="petFriendly" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="furnished" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="smokers" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="petFriendly" type="xs:string" />
+  <xs:element name="furnished" type="xs:string" />
+  <xs:element name="smokers" type="xs:string" />
+  <xs:element name="ecoFriendly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="solarPanels" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="solarHotWater" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="waterTank" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="greyWaterSystem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="solarPanels" type="xs:string" />
+  <xs:element name="solarHotWater" type="xs:string" />
+  <xs:element name="waterTank" type="xs:string" />
+  <xs:element name="greyWaterSystem" type="xs:string" />
+  <xs:element name="idealFor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="firstHomeBuyer" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="investors" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="downsizing" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="couples" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="students" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="lrgFamilies" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="retirees" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="firstHomeBuyer" type="xs:string" />
+  <xs:element name="investors" type="xs:string" />
+  <xs:element name="downsizing" type="xs:string" />
+  <xs:element name="couples" type="xs:string" />
+  <xs:element name="students" type="xs:string" />
+  <xs:element name="lrgFamilies" type="xs:string" />
+  <xs:element name="retirees" type="xs:string" />
+  <xs:element name="views">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="city" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="water" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="valley" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="mountain" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="ocean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="city" type="xs:string" />
+  <xs:element name="water" type="xs:string" />
+  <xs:element name="valley" type="xs:string" />
+  <xs:element name="mountain" type="xs:string" />
+  <xs:element name="ocean" type="xs:string" />
+  <xs:element name="ruralFeatures">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="fencing" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="annualRainfall" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="soilTypes" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="improvements" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="councilRates" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="irrigation" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="carryingCapacity" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="services" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fencing" type="xs:string" />
+  <xs:element name="annualRainfall" type="xs:string" />
+  <xs:element name="soilTypes" type="xs:string" />
+  <xs:element name="improvements" type="xs:string" />
+  <xs:element name="councilRates" type="xs:string" />
+  <xs:element name="irrigation" type="xs:string" />
+  <xs:element name="carryingCapacity" type="xs:string" />
+  <xs:element name="services" type="xs:string" />
+  <xs:element name="soldDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="1">
+          <xs:element ref="price" />
+          <xs:element ref="soldPrice" />
+        </xs:choice>
+        <xs:choice minOccurs="0" maxOccurs="1">
+          <xs:element ref="date" />
+          <xs:element ref="soldDate" />
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="soldDate" type="xs:string" />
+  <xs:element name="date" type="xs:string" />
+  <xs:element name="landDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="area" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="frontage" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="depth" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="crossOver" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="area">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="range" />
+      </xs:choice>
+      <xs:attribute name="unit" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="square" />
+            <xs:enumeration value="squareMeter" />
+            <xs:enumeration value="acre" />
+            <xs:enumeration value="hectare" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute default="total" name="of" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="frontage">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute fixed="meter" name="unit">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="meter" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="depth">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute fixed="meter" name="unit">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="meter" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="side" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="rear" />
+                <xs:enumeration value="left" />
+                <xs:enumeration value="right" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="crossOver">
+    <xs:complexType>
+      <xs:attribute name="value" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="left" />
+            <xs:enumeration value="right" />
+            <xs:enumeration value="center" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buildingDetails">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="area" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="energyRating" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="newlyBuilt" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="energyRating" type="xs:string" />
+  <xs:element name="inspectionTimes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="inspection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="newlyBuilt">
+    <xs:complexType>
+      <xs:attribute name="value" type="xs:string"></xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="inspection" type="xs:string" />
+  <xs:element name="auction">
+    <xs:complexType>
+      <xs:attribute name="date" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="vendorDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="name" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="telephone" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="email" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="externalLink">
+    <xs:complexType>
+      <xs:attribute name="href" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="videoLink">
+    <xs:complexType>
+      <xs:attribute name="href" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="availabilityLink">
+    <xs:complexType>
+      <xs:attribute name="href" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="objects">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="floorplan" />
+        <xs:element ref="img" />
+        <xs:element ref="document" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="document">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="id" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="1" />
+                <xs:enumeration value="2" />
+                <xs:enumeration value="3" />
+                <xs:enumeration value="4" />
+                <xs:enumeration value="5" />
+                <xs:enumeration value="6" />
+                <xs:enumeration value="7" />
+                <xs:enumeration value="8" />
+                <xs:enumeration value="9" />
+                <xs:enumeration value="10" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="modTime" type="xs:string" />
+          <xs:attribute name="url" type="xs:string" />
+          <xs:attribute name="file" type="xs:string" />
+          <xs:attribute name="title" type="xs:string" />
+          <xs:attribute fixed="pdf" name="format">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="pdf" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="images">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="img" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="img">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="id" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="m" />
+                <xs:enumeration value="a" />
+                <xs:enumeration value="b" />
+                <xs:enumeration value="c" />
+                <xs:enumeration value="d" />
+                <xs:enumeration value="e" />
+                <xs:enumeration value="f" />
+                <xs:enumeration value="g" />
+                <xs:enumeration value="h" />
+                <xs:enumeration value="i" />
+                <xs:enumeration value="j" />
+                <xs:enumeration value="k" />
+                <xs:enumeration value="l" />
+                <xs:enumeration value="n" />
+                <xs:enumeration value="o" />
+                <xs:enumeration value="p" />
+                <xs:enumeration value="q" />
+                <xs:enumeration value="r" />
+                <xs:enumeration value="s" />
+                <xs:enumeration value="t" />
+                <xs:enumeration value="u" />
+                <xs:enumeration value="v" />
+                <xs:enumeration value="w" />
+                <xs:enumeration value="x" />
+                <xs:enumeration value="y" />
+                <xs:enumeration value="z" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="modTime" type="xs:string" />
+          <xs:attribute name="url" type="xs:string" />
+          <xs:attribute name="file" type="xs:string" />
+          <xs:attribute fixed="jpg" name="format">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="jpg" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="floorplan">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="id" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="1" />
+                <xs:enumeration value="2" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="modTime" type="xs:string" />
+          <xs:attribute name="url" type="xs:string" />
+          <xs:attribute name="file" type="xs:string" />
+          <xs:attribute default="gif" name="format">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="gif" />
+                <xs:enumeration value="jpg" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="isMultiple">
+    <xs:complexType>
+      <xs:attribute default="no" name="value">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="yes" />
+            <xs:enumeration value="no" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="marketing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="upgrade" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="upgrade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="presentation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="presentation">
+    <xs:complexType>
+      <xs:attribute name="style" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="enhanced" />
+            <xs:enumeration value="premium" />
+            <xs:enumeration value="elite" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="duration" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="30" />
+            <xs:enumeration value="90" />
+            <xs:enumeration value="180" />
+            <xs:enumeration value="365" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="project">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id" />
+        <xs:element ref="order" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="id" type="xs:string" />
+  <xs:element name="order" type="xs:string" />
+</xs:schema>

@@ -1,0 +1,173 @@
+﻿@{
+    ViewBag.Title = "Validator";
+}
+
+<div class="page-header">
+    <h1>REAXML Validator</h1>
+</div>
+
+<p>Insert your REAXML into the provided input and wait for the validation to complete. Any errors / warnings will be listed below.</p>
+
+<div class="well validator-input">
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="form-group">
+                <label for="inputReaxml" class="col-lg-1 control-label">REAXML</label>
+                <div class="col-lg-11">
+                    <textarea type="text" class="form-control" id="inputReaxml" placeholder="Reaxml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE propertyList SYSTEM &quot;http://reaxml.realestate.com.au/propertyList.dtd&quot;&gt;
+&lt;propertyList date=&quot;2009-01-01-12:30:00&quot; username=&quot;xmluser&quot; password=&quot;xmlpassword&quot;&gt;
+&lt;!-- Current listing --&gt;
+&lt;residential modTime=&quot;2009-01-01-12:30:00&quot; status=&quot;current&quot;&gt;
+&lt;agentID&gt;XNWXNW&lt;/agentID&gt;
+&lt;uniqueID&gt;ABCD1234&lt;/uniqueID&gt;
+&lt;authority value=&quot;exclusive&quot;/&gt;
+&lt;underOffer value=&quot;no&quot;/&gt;
+&lt;newConstruction&gt;1&lt;/newConstruction&gt;
+&lt;listingAgent&gt;
+&lt;name&gt;Mr. John Doe&lt;/name&gt;
+&lt;telephone type=&quot;BH&quot;&gt;05 1234 5678&lt;/telephone&gt;
+&lt;email&gt;jdoe@somedomain.com.au&lt;/email&gt;
+&lt;twitterURL&gt;https://www.twitter.com/JohnDoe&lt;/twitterURL&gt;
+&lt;/listingAgent&gt;
+&lt;price display=&quot;yes&quot;&gt;500000&lt;/price&gt;
+&lt;priceView&gt;Between $400,000 and $600,000&lt;/priceView&gt;
+&lt;address display=&quot;yes&quot;&gt;
+&lt;subNumber&gt;2&lt;/subNumber&gt;
+&lt;streetNumber&gt;39&lt;/streetNumber&gt;
+&lt;street&gt;Main Road&lt;/street&gt;
+&lt;suburb display=&quot;yes&quot;&gt;RICHMOND&lt;/suburb&gt;
+&lt;state&gt;vic&lt;/state&gt;
+&lt;postcode&gt;3121&lt;/postcode&gt;
+&lt;country&gt;AUS&lt;/country&gt;
+&lt;/address&gt;
+&lt;municipality&gt;Yarra&lt;/municipality&gt;
+&lt;streetDirectory type=&quot;melways&quot;&gt;
+&lt;page&gt;44&lt;/page&gt;
+&lt;reference&gt;G7&lt;/reference&gt;
+&lt;/streetDirectory&gt;
+&lt;category name=&quot;House&quot;/&gt;
+&lt;headline&gt;SHOW STOPPER!!!&lt;/headline&gt;
+&lt;description&gt;Don&#39;t pass up an opportunity like this! First to inspect will buy! Close to local amenities and schools. Features lavishly appointed bathrooms, modern kitchen, rustic outhouse.Don&#39;t pass up an opportunity like this! First to inspect will buy! Close to local amenities and schools. Features lavishly appointed bathrooms, modern kitchen, rustic outhouse.&lt;/description&gt;
+&lt;features&gt;
+&lt;bedrooms&gt;4&lt;/bedrooms&gt;
+&lt;bathrooms&gt;2&lt;/bathrooms&gt;
+&lt;ensuite&gt;2&lt;/ensuite&gt;
+&lt;garages&gt;3&lt;/garages&gt;
+&lt;carports&gt;2&lt;/carports&gt;
+&lt;remoteGarage&gt;yes&lt;/remoteGarage&gt;
+&lt;secureParking&gt;yes&lt;/secureParking&gt;
+&lt;airConditioning&gt;1&lt;/airConditioning&gt;
+&lt;alarmSystem&gt;1&lt;/alarmSystem&gt;
+&lt;vacuumSystem&gt;no&lt;/vacuumSystem&gt;
+&lt;intercom&gt;no&lt;/intercom&gt;
+&lt;pool type=&quot;inground&quot;&gt;yes&lt;/pool&gt;
+&lt;spa type=&quot;inground&quot;&gt;no&lt;/spa&gt;
+&lt;tennisCourt&gt;yes&lt;/tennisCourt&gt;
+&lt;balcony&gt;yes&lt;/balcony&gt;
+&lt;deck&gt;yes&lt;/deck&gt;
+&lt;courtyard&gt;yes&lt;/courtyard&gt;
+&lt;outdoorEnt&gt;yes&lt;/outdoorEnt&gt;
+&lt;shed&gt;yes&lt;/shed&gt;
+&lt;fullyFenced&gt;yes&lt;/fullyFenced&gt;
+&lt;openFirePlace&gt;1&lt;/openFirePlace&gt;
+&lt;heating type=&quot;other&quot;/&gt;
+&lt;hotWaterService type=&quot;gas&quot;/&gt;
+&lt;otherFeatures&gt;balcony, courtyard, shed&lt;/otherFeatures&gt;
+&lt;/features&gt;
+&lt;landDetails&gt;
+&lt;area unit=&quot;square&quot;&gt;80&lt;/area&gt;
+&lt;frontage unit=&quot;meter&quot;&gt;20&lt;/frontage&gt;
+&lt;depth unit=&quot;meter&quot; side=&quot;rear&quot;&gt;40&lt;/depth&gt;
+&lt;crossOver value=&quot;left&quot;/&gt;
+&lt;/landDetails&gt;
+&lt;buildingDetails&gt;
+&lt;area unit=&quot;square&quot;&gt;40&lt;/area&gt;
+&lt;newlyBuilt value=&quot;yes&quot;/&gt;
+&lt;energyRating&gt;4.5&lt;/energyRating&gt;
+&lt;/buildingDetails&gt;
+&lt;inspectionTimes&gt;
+&lt;inspection&gt;21-Jan-2009 11:00am to 1:00pm&lt;/inspection&gt;
+&lt;inspection&gt;22-Jan-2009 3:00pm to 3:30pm&lt;/inspection&gt;
+&lt;/inspectionTimes&gt;
+&lt;vendorDetails&gt;
+&lt;name&gt;Mr. John Doe&lt;/name&gt;
+&lt;telephone type=&quot;BH&quot;&gt;05 1234 5678&lt;/telephone&gt;
+&lt;/vendorDetails&gt;
+&lt;externalLink href=&quot;http://www.realestate.com.au/&quot;/&gt;
+&lt;images&gt;
+&lt;img id=&quot;m&quot; modTime=&quot;2009-01-01-12:30:00&quot; url=&quot;http://www.realestate.com.au/tmp/imageM.jpg&quot; format=&quot;jpg&quot;/&gt;
+&lt;img id=&quot;a&quot; modTime=&quot;2009-01-01-12:30:00&quot; url=&quot;http://www.realestate.com.au/tmp/imageA.jpg&quot; format=&quot;jpg&quot;/&gt;
+&lt;/images&gt;
+&lt;objects&gt;
+&lt;floorplan id=&quot;1&quot; modTime=&quot;2009-01-01-12:30:00&quot; url=&quot;http://www.realestate.com.au/tmp/floorplan1.gif&quot; format=&quot;gif&quot;/&gt;
+&lt;floorplan id=&quot;2&quot; modTime=&quot;2009-01-01-12:30:00&quot; url=&quot;http://www.realestate.com.au/tmp/floorplan2.gif&quot; format=&quot;gif&quot;/&gt;
+&lt;/objects&gt;
+&lt;/residential&gt;
+&lt;/propertyList&gt;
+                    </textarea>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <div>
+        <button class="btn btn-success pull-right" id="btn-validate">Validate</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div>
+    <div data-bind="visible: processing">
+        <h2>
+            <i class="fa fa-spinner fa-spin"></i>&nbsp;Validating...
+        </h2>
+    </div>
+</div>
+<div data-bind="visible: success">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <i class="fa fa-check"></i>&nbsp;Success
+        </div>
+        <div class="panel-body">
+            The document was parsed successfully
+            <span data-bind="visible: errors().length > 0">, but there are some problems with the document, see below...</span>
+        </div>
+    </div>
+</div>
+<div data-bind="visible: success && errors().length > 0">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;Validation Errors
+        </div>
+        <div class="panel-body">
+            <ul data-bind="foreach: errors">
+                <li data-bind="text: $data"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div data-bind="visible: success && warnings().length > 0">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;Validation Warnings
+        </div>
+        <div class="panel-body">
+            <ul data-bind="foreach: warnings">
+                <li data-bind="text: $data"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div data-bind="visible: !success()">
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <i class="fa fa-times"></i>&nbsp;Something went wrong
+        </div>
+        <div class="panel-body" data-bind="text: status">
+            
+        </div>
+    </div>
+</div>
